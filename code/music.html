@@ -18,33 +18,32 @@
     <div class="container">
       <!-- Navbar -->
       <div class="navbar">
-        <!-- Logo -->
+        <!-- logo -->
         <div class="nav-item logo">
           <img src="/images/logo_bg.png" alt="logo" />
         </div>
 
-        <div class="nav-item" id="home">
+        <div class="nav-item" data-page="arena.html">
           <span class="material-symbols-outlined">home_app_logo</span>
           <p>Home</p>
         </div>
 
-        <div class="nav-item">
+        <div class="nav-item" data-page="workout.html">
           <span class="material-symbols-outlined">fitness_center</span>
           <p>Workout</p>
         </div>
 
-        <div class="nav-item">
+        <div class="nav-item" data-page="schedule.html">
           <span class="material-symbols-outlined">edit_calendar</span>
           <p>Schedule</p>
         </div>
 
-        <div class="nav-item">
+        <div class="nav-item" data-page="docs.html">
           <span class="material-symbols-outlined">description</span>
           <p>Docs</p>
         </div>
 
-        <!-- Music Icon -->
-        <div class="nav-item" onclick="openModal()">
+        <div class="nav-item" data-page="music.html">
           <span class="material-symbols-outlined">music_note</span>
           <p>Music</p>
         </div>
@@ -57,7 +56,7 @@
         </div>
 
         <div class="s-item bmi">
-          <button>Click for BMI</button>
+          <button id="bmi-button">Click for BMI</button>
         </div>
 
         <div class="s-item searchbar">
@@ -102,7 +101,7 @@
     </div>
 
     <script src="music.js"></script>
-      <!-- <script>
+    
 
       // Music search logic
       const API_KEY = 2; // Replace with your TheAudioDB API Key

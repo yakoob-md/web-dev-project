@@ -1,25 +1,36 @@
 const express = require('express');
-const path = require('path');
 const app = express();
+const ejs = require('ejs');
+const path = require('path');
 
-// Set EJS as the templating engine
-app.set('view engine', 'ejs');
+// Serve static files (CSS, JS, images)
+app.use(express.static(path.join(__dirname)));
 
-// Serve static files (CSS, JS, Images, etc.)
-app.use(express.static(path.join(__dirname, '../')));
-
-// Route for Home Page
-app.get('/', (req, res) => {
-    res.render('home', { page: 'home.html' });
+// Middleware to render EJS components in HTML files
+app.engine('html', (filePath, options, callback) => {
+    ejs.renderFile(filePath, options, callback);
 });
 
-// Route for Workout Page
-app.get('/workout', (req, res) => {
-    res.render('home', { page: 'workout.html' });
+app.set('views', __dirname); // Point to the `code` folder for HTML/EJS files
+app.set('view engine', 'html'); // Use `.html` as the extension
+
+// Serve home page with navbar and search bar
+// app.get('/', (req, res) => {
+//     res.render('arena.html', {
+//         navbar: 'navbar.ejs',
+//         search: 'search.ejs'
+//     });
+// });
+
+// Serve another static page with reusable components
+app.get('/prac', (req, res) => {
+    res.render('prac.html', {
+        navbar: 'navbar.ejs',
+        search: 'search.ejs'
+    });
 });
 
-// Start the server
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:${PORT}`);
+const port = 3000;
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
 });
