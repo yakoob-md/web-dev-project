@@ -1,0 +1,263 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #e7ecef;
+  position: relative;
+}
+
+.navbar {
+  height: 100vh;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(#950101 0% 60%, #ff0000);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.logo {
+  width: 100%;
+}
+
+.logo img {
+  width: 100%;
+  height: 65px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.nav-item span {
+  font-size: 35px;
+}
+
+.nav-item p {
+  margin-left: 5px;
+  font-size: 15px;
+}
+.footer {
+  height: 60px;
+  width: calc(100% - 70px);
+  background: linear-gradient(to left, #950101 0% 60%, #ff0000);
+  position: fixed;
+  bottom: 0;
+  left: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white; /* General color for all text */
+}
+
+.footer-text h4,
+.footer-text h3 {
+  margin: 0;
+  padding-left: 15px;
+  font-family: Arial, sans-serif;
+  color: white; /* Ensure the footer text is white */
+}
+
+.footer-apps i,
+.social-media i {
+  color: white; /* Ensure the app store icons and social media icons are white */
+  font-size: 30px;
+  margin-right: 15px;
+}
+
+.social-media i {
+  margin: 0 10px;
+}
+
+.footer-apps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+}
+.search {
+  width: calc(100% - 70px);
+  height: 60px;
+  background: linear-gradient(to right, #950101 0% 55%, #ff0000);
+  position: fixed;
+  top: 0;
+  left: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 10;
+}
+
+.s-item {
+  margin: 0 15px;
+}
+
+.searchbar input {
+  width: 230px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}
+.s-item button {
+  background-color: #d10000;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  margin: 0 10px;
+  font-size: 14px;
+  cursor: pointer;
+  &:hover{
+    background-color: #ff4d4d;
+  }
+}
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+}
+
+.icons span {
+  font-size: 40px;
+}
+/* .search {
+  width: calc(100% - 70px);
+  height: 60px;
+  background: linear-gradient(to right, #950101 0% 55%, #ff0000);
+  position: fixed;
+  top: 0;
+  left: 70px;
+  display: flex;
+  justify-content: flex-end;
+}
+.s-item {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px;
+}
+.s-item button {
+  background-color: #d10000;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  margin: 0 10px;
+  font-size: 14px;
+  cursor: pointer;
+  &:hover{
+    background-color: #ff4d4d;
+  }
+}
+
+.searchbar {
+  width: 230px;
+}
+input[name="searchbar"] {
+  width: 100%;
+  height: 25px;
+  border-radius: 10px;
+  color: white;
+}
+.bmi button {
+  width: 100%;
+  height: 30px;
+}
+.icons {
+  width: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.icons span {
+  font-size: 40px;
+  color: white;
+} */
+
+.border_equip {
+  height: 300px;
+  width: 300px;
+  background: linear-gradient(#7d0909, #950101, #ff0000);
+  position: relative;
+  left: 1000px;
+  top: 180px;
+  border-radius: 10px;
+}
+
+.equipment {
+  width: 225px;
+  height: 220px;
+  background-color: #ffffff;
+  position: absolute;
+  left: 22px;
+  bottom: 15px;
+  border-radius: 10px;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+}
+.equipment h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.filter-categories label {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.filter-categories input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: #950101; /* Checkbox color */
+}
+
+.filter-categories span {
+  font-size: 16px;
+  color: #333;
+}
+
+.humans {
+  width: calc(100% - 490px);
+  height: calc(100% - 120px);
+  position: absolute;
+  left: 70px;
+  top: 60px;
+  bottom: 60px;
+}
+svg{
+  width: 100%;
+  height:100%;
+}
+.humans img {
+  width: 100%;
+  height:100%;
+}

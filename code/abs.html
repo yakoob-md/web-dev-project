@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Core Page</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+   <link rel="stylesheet" href="chest.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <!-- logo -->
+        <div class="nav-item logo">
+          <img src="/images/logo_bg.png" alt="logo" />
+        </div>
+
+        <div class="nav-item" data-page="arena.html">
+          <span class="material-symbols-outlined">home_app_logo</span>
+          <p>Home</p>
+        </div>
+
+        <div class="nav-item" data-page="workout.html">
+          <span class="material-symbols-outlined">fitness_center</span>
+          <p>Workout</p>
+        </div>
+
+        <div class="nav-item" data-page="schedule.html">
+          <span class="material-symbols-outlined">edit_calendar</span>
+          <p>Schedule</p>
+        </div>
+
+        <div class="nav-item" data-page="docs.html">
+          <span class="material-symbols-outlined">description</span>
+          <p>Docs</p>
+        </div>
+
+        <div class="nav-item" data-page="music.html">
+          <span class="material-symbols-outlined">music_note</span>
+          <p>Music</p>
+        </div>
+      </div>
+
+      <div class="search">
+        <div class="s-item">
+          <!-- Optional Logo -->
+        </div>
+
+        <div class="s-item">
+          <button>New Workout Generator</button>
+        </div>
+
+        <div class="s-item">
+          <button>Click for BMI</button>
+        </div>
+
+        <div class="s-item searchbar">
+          <input type="text" name="searchbar" placeholder="Search" />
+        </div>
+
+        <div class="s-item icons">
+          <span class="material-symbols-outlined">shopping_cart</span>
+          <span class="material-symbols-outlined">person</span>
+        </div>
+      </div>
+
+      <div class="content-parent">
+        <div class="content">
+          <div class="exercise-list">
+            <div class="exercise-card">
+              <div class="exercise-card-content">
+                <h3>Hand Planks</h3>
+                <p>Beginner</p>
+
+                <div class="video-container">
+                  <video autoplay muted loop>
+                    <source src="/filam/abs/plank1.mp4" type="video/mp4" />
+                  </video>
+                  <video autoplay muted loop>
+                    <source src="/filam/abs/plank2.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="exercise-steps">
+                  <div class="step">
+                    <strong>Step 1:</strong> Start in a kneeling position with
+                    your hands planted on the ground.
+                  </div>
+                  <div class="step">
+                    <strong>Step 2:</strong>Pick your knees up off the ground.
+                    Hold in this position with a flat back.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Exercise Cards -->
+            <div class="exercise-card">
+              <div class="exercise-card-content">
+                <h3>Barbell Situp</h3>
+                <p>Intermediate</p>
+                <div class="video-container">
+                  <video autoplay muted loop>
+                    <source src="/filam/abs/barbsitup1.mp4" type="video/mp4" />
+                  </video>
+                  <video autoplay muted loop>
+                    <source src="/filam/abs/barbsitup2.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="exercise-steps">
+                  <div class="step">
+                    <strong>Step 1:</strong>Hold the bar with a slightly wider
+                    than shoulder width grip. Push the bar up toward the ceiling
+                    and maintain that elbow extension.
+                  </div>
+                  <div class="step">
+                    <strong>Step 2:</strong>Flex your abs and sit-up. Aim to get
+                    your torso vertical while maintaining the barbell overhead.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exercise-card">
+              <div class="exercise-card-content">
+                <h3>Dumbbell Twist</h3>
+                <p>Intermediate</p>
+                <div class="video-container">
+                  <video autoplay muted loop>
+                    <source src="/filam/abs/dumbtwist1.mp4" type="video/mp4" />
+                  </video>
+                  <video autoplay muted loop>
+                    <source src="/filam/abs/dumbtwist2.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="exercise-steps">
+                  <div class="step">
+                    <strong>Step 1:</strong>Sit on the floor and flex your knees
+                    and hips to a 90 degree angle.
+                  </div>
+                  <div class="step">
+                    <strong>Step 2:</strong> Your feet should be hovering off
+                    the ground. (If that's too hard start with heels on the
+                    floor)
+                  </div>
+                  <div class="step">
+                    <strong>Step 3:</strong>Rotate your upper spine to engage
+                    your obliques
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exercise-card">
+              <div class="exercise-card-content">
+                <h3>Laying Leg Raises</h3>
+                <p>Beginner</p>
+                <div class="video-container">
+                  <video autoplay muted loop>
+                    <source src="/filam/abs/legraises1.mp4" type="video/mp4" />
+                  </video>
+                  <video autoplay muted loop>
+                    <source src="/filam/abs/legraises2.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="exercise-steps">
+                  <div class="step">
+                    <strong>Step 1:</strong>Lay on your back with your arms palms down on either side. 
+                  </div>
+                  <div class="step">
+                    <strong>Step 2:</strong>Keep your legs together and as straight as possible. 
+                  </div>
+                  <div class="step">
+                    <strong>Step 3:</strong>Slowly
+                    raise your legs to a 90° angle, pause at this position, or as
+                    high as you can reach your legs, and then slowly lower your
+                    legs back down. 
+                  </div>
+                  <div class="step">
+                    <strong>Step 4:</strong>Duration of these movements should be slow
+                    so that you do not utilize momentum, enabling you to get the
+                    most out of the exercise.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-sidebar">
+     
+              
+
+
+                <div class="equipment">
+                  <h3>Equipment</h3>
+                  <div class="equipment-item">
+                    <label>
+                      <input type="checkbox" name="equipment" value="Smith" /> Smith
+                    </label>
+                  </div>
+                  <div class="equipment-item">
+                    <label>
+                      <input type="checkbox" name="equipment" value="Recovery" />
+                      Recovery
+                    </label>
+                  </div>
+                  <div class="equipment-item">
+                    <label>
+                      <input type="checkbox" name="equipment" value="Cardio" />
+                      Cardio
+                    </label>
+                  </div>
+                  <div class="equipment-item">
+                    <label>
+                      <input type="checkbox" name="equipment" value="Yoga" /> Yoga
+                    </label>
+                  </div>
+                  <div class="equipment-item">
+                    <label>
+                      <input type="checkbox" name="equipment" value="Machine" />
+                      Machine
+                    </label>
+                  </div>
+                  <div class="equipment-item">
+                    <label>
+                      <input type="checkbox" name="equipment" value="Stretches" />
+                      Stretches
+                    </label>
+                  </div>
+                  <div class="equipment-item">
+                    <label>
+                      <input type="checkbox" name="equipment" value="Dumbbells" />
+                      Dumbbells
+                    </label>
+                  </div>
+                  <div class="equipment-item">
+                    <label>
+                      <input type="checkbox" name="equipment" value="Barbell" />
+                      Barbell
+                    </label>
+                  </div>
+                  <div class="equipment-item">
+                    <label>
+                      <input type="checkbox" name="equipment" value="Cables" />
+                      Cables
+                    </label>
+                  </div>
+                  <div class="equipment-item">
+                    <label>
+                      <input type="checkbox" name="equipment" value="Plates" />
+                      Plates
+                    </label>
+                  </div>
+                </div>
+              </div>
+          </div>
+          
+        <div class="next-entry">
+          <div class="text">showing 1 of 2 entries</div>
+          <button>Next</button>
+        </div>
+        <div class="footer">
+          <div class="footer-text">
+            <h4>@2024 GymFit WebDev BMU</h4>
+            <h4>Yakub | Prakhar | Tanish</h4>
+          </div>
+          <div class="footer-apps">
+            <img src="/images/apple.jpg" alt="ios">
+            <img src="/images/playstore.jpg" alt="gplay">
+          </div>
+          <div class="social-media">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+          </div>
+        </div>
+    </div>
+      </div>
+    </div>
+    <!-- <script src="demo.js"></script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select all nav-item elements with a data-page attribute
+        const navItems = document.querySelectorAll(".navbar .nav-item[data-page]");
+    
+        // Add a click event listener to each nav-item
+        navItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const targetPage = item.getAttribute("data-page"); // Get the target page
+            if (targetPage) {
+              window.location.href = targetPage; // Redirect to the target page
+            }
+          });
+        });
+      });
+    </script>
+    
+  </body>
+</html>

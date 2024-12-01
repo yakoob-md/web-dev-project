@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        /* overflow-x: hidden; */
+      }
+
+      .container {
+        width: 100%;
+        min-height: 100vh;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        background-color:#E7ECEF;
+        position: relative;
+      }
+
+      .navbar {
+        height: 100vh;
+        width: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(#950101 0% 60%, #ff0000);
+        position: fixed;
+        left: 0;
+        top: 0;
+      }
+
+      .logo {
+        width: 100%;
+      }
+
+      .logo img {
+        width: 100%;
+        height: 65px;
+      }
+
+      .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: white;
+      }
+
+      .nav-item span {
+        font-size: 35px;
+      }
+
+      .nav-item p {
+        margin-left: 5px;
+        font-size: 15px;
+      }
+
+      .footer {
+        height: 60px;
+        width: calc(100% - 70px);
+        background: linear-gradient(to left, #950101 0% 60%, #ff0000);
+        position: fixed;
+        bottom: 0;
+        left: 70px;
+      }
+
+      .search {
+        width: calc(100% - 70px);
+        height: 60px;
+        background: linear-gradient(to right, #950101 0% 55%, #ff0000);
+        position: fixed;
+        top: 0;
+        left: 70px;
+        display:flex;
+        justify-content:flex-end;
+      }
+      .s-item{
+        width:150px;
+        height:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        margin:0 15px;
+      }
+      .searchbar{
+        width:230px;
+      }
+      input[name="searchbar"]{
+        width:100%;
+        height:25px;
+        border-radius:10px;
+        color:white;
+      }
+      .bmi button{
+        width:100%;
+        height:30px;
+      }
+      .icons{
+        width:100px;
+        display:flex;
+        justify-content:space-evenly;
+        align-items: center;
+      }
+      .icons span{
+        font-size:40px;
+        color:white;
+      }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <!-- logo -->
+      <div class="nav-item logo">
+        <img src="logo_bg.png" alt="logo" />
+      </div>
+
+      <div class="nav-item">
+        <span class="material-symbols-outlined">home_app_logo</span>
+        <p>Home</p>
+      </div>
+
+      <div class="nav-item">
+        <span class="material-symbols-outlined">fitness_center</span>
+        <p>Workout</p>
+      </div>
+
+      <div class="nav-item">
+        <span class="material-symbols-outlined">edit_calendar</span>
+        <p>Schedule</p>
+      </div>
+
+      <div class="nav-item">
+        <span class="material-symbols-outlined">description</span>
+        <p>Docs</p>
+      </div>
+
+      <div class="nav-item">
+        <span class="material-symbols-outlined">music_note</span>
+        <p>Music</p>
+      </div>
+    </div>
+
+    <div class="search">
+
+      <div class="s-item">
+        <!-- <img src="gyfit_h.jpg" alt="logo"> -->
+      </div>
+
+      <div class="s-item work">
+        <button>new workout generator</button>
+      </div>
+
+      <div class="s-item bmi">
+        <button>Click for BMI</button>
+      </div>
+
+      <div class="s-item searchbar">
+        <input type="text" name="searchbar" placeholder="Search">
+      </div>
+
+      <div class="s-item icons">
+        <div class="cart">
+          <span class="material-symbols-outlined">shopping_cart</span>
+        </div>
+        <div class="login">
+          <span class="material-symbols-outlined">person</span>
+        </div>
+      </div>
+
+    </div>
+    // workouts
+    <div class="exercise">
+      <div class="videos"></div>
+      <div class="videos"></div>
+    </div>
+    <div class="exercise">
+      <div class="videos"></div>
+      <div class="videos"></div>
+    </div>
+    <div class="exercise">
+      <div class="videos"></div>
+      <div class="videos"></div>
+    </div>
+    <div class="exercise">
+      <div class="videos"></div>
+      <div class="videos"></div>
+    </div>
+    
+    <div class="humans">
+      
+    </div>
+
+  </div>
+</body>
+</html>

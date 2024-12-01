@@ -1,0 +1,7 @@
+{
+    "home": {"url": "arena.html"},
+    "workout": {"url": "workout.html"},
+    "docs": {"url": "docs.html"},
+    "music": {"url": "music.html"},
+    "schedule": {"url": "schedule.html"}
+}

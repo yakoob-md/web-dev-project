@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arena</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #e7ecef;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar Styles */
+.navbar {
+  height: 100vh;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(#950101 0% 60%, #ff0000);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin: 20px 0;
+}
+
+.nav-item span {
+  font-size: 35px;
+}
+
+.nav-item p {
+  font-size: 15px;
+}
+
+/* Search Bar Styles */
+.search {
+  width: calc(100% - 70px);
+  height: 60px;
+  background: linear-gradient(to right, #950101 0% 55%, #ff0000);
+  position: fixed;
+  top: 0;
+  left: 70px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px;
+}
+
+.s-item {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.s-item input {
+  width: 230px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.icons {
+  width: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.icons span {
+  font-size: 40px;
+  color: white;
+}
+
+/* Overlay Styles */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+/* Popup Styles */
+.login-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 20;
+  width: 400px;
+  max-width: 90%;
+}
+
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-content h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.popup-content input {
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.popup-content button {
+  background-color: #950101;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background-color: #ff0000;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="nav-item logo">
+        <img src="/images/logo_bg.png" alt="logo" />
+      </div>
+      <div class="nav-item">
+        <span class="material-symbols-outlined">home_app_logo</span>
+        <p>Home</p>
+      </div>
+      <div class="nav-item">
+        <span class="material-symbols-outlined">fitness_center</span>
+        <p>Workout</p>
+      </div>
+      <div class="nav-item">
+        <span class="material-symbols-outlined">edit_calendar</span>
+        <p>Schedule</p>
+      </div>
+      <div class="nav-item">
+        <span class="material-symbols-outlined">description</span>
+        <p>Docs</p>
+      </div>
+      <div class="nav-item">
+        <span class="material-symbols-outlined">music_note</span>
+        <p>Music</p>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search">
+      <div class="s-item searchbar">
+        <input type="text" name="searchbar" placeholder="Search" />
+      </div>
+      <div class="s-item icons">
+        <div class="cart">
+          <span class="material-symbols-outlined">shopping_cart</span>
+        </div>
+        <div class="login" id="loginBtn">
+          <span class="material-symbols-outlined">person</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Login Popup -->
+    <div id="loginPopup" class="login-popup">
+      <div class="popup-content">
+        <h2>Login to Arena</h2>
+        <form id="loginForm">
+          <input type="text" id="username" name="username" placeholder="Username" required />
+          <input type="password" id="password" name="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+        </form>
+        <button id="closePopup">Close</button>
+        <p id="errorMessage" style="color: red; display: none;">Invalid username or password</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Fetch the JSON data (in a real-world app, use AJAX or fetch)
+    const loginData = {
+      "users": [
+        { "username": "johnDoe", "password": "password123" },
+        { "username": "janeDoe", "password": "mypassword456" }
+      ]
+    };
+
+    const loginBtn = document.getElementById('loginBtn');
+    const overlay = document.getElementById('overlay');
+    const loginPopup = document.getElementById('loginPopup');
+    const closePopup = document.getElementById('closePopup');
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('errorMessage');
+
+    // Show login popup
+    loginBtn.addEventListener('click', () => {
+      overlay.style.display = 'block';
+      loginPopup.style.display = 'block';
+    });
+
+    // Close the login popup
+    closePopup.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      loginPopup.style.display = 'none';
+      errorMessage.style.display = 'none'; // Hide error message on close
+    });
+
+    // Close popup if clicked outside of the login form
+    overlay.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      loginPopup.style.display = 'none';
+      errorMessage.style.display = 'none'; // Hide error message on close
+    });
+
+    // Handle form submission and validate against JSON data
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent the default form submission
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Find matching user from the JSON data
+      const user = loginData.users.find(user => user.username === username && user.password === password);
+
+      if (user) {
+        alert('Login successful!');
+        overlay.style.display = 'none';
+        loginPopup.style.display = 'none';
+      } else {
+        errorMessage.style.display = 'block'; // Show error message
+      }
+    });
+  </script>
+</body>
+</html>
