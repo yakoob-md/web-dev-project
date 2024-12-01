@@ -1,29 +1,50 @@
-// Content Data
-const bmiContent = {
-  left: {
-    title: "BMI Calculator",
-    description:
-      "BMI is a measurement of a person's leanness or corpulence based on their height and weight, intended to quantify tissue mass.",
-    form: {
-      fields: [
-        { label: "Enter Weight in Kgs", id: "bmi-weight", placeholder: "e.g., 70" },
-        { label: "Enter Height in m", id: "bmi-height", placeholder: "e.g., 1.75" },
-        { label: "Enter Age", id: "bmi-age", placeholder: "e.g., 25" }
-      ],
-      button: { id: "bmi-calculate-btn", text: "Calculate" }
-    },
-    formulaImage: { src: "/images/formula.jpg", alt: "Formula Image" }
-  },
-  right: {
-    images: [
-      { src: "/images/bmi-range.jpg", alt: "BMI range chart" },
-      { src: "/images/bmi-chart.jpg", alt: "BMI chart" }
-    ]
-  }
-};
 
-// DOM Ready Function
+
 document.addEventListener("DOMContentLoaded", function () {
+  // Handle navbar buttons
+  const navItems = document.querySelectorAll(".navbar .nav-item[data-page]");
+  navItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const targetPage = item.getAttribute("data-page"); // Get the target page
+      if (targetPage) {
+        window.location.href = targetPage; // Redirect to the target page
+      }
+    });
+  });
+
+  // Handle BMI button
+  const bmiButton = document.getElementById("bmi-button");
+  if (bmiButton) {
+    bmiButton.addEventListener("click", function () {
+      // Navigate to bmi.html
+      window.location.href = "bmi.html";
+    });
+  }
+
+  const bmiContent = {
+    left: {
+      title: "BMI Calculator",
+      description:
+        "BMI is a measurement of a person's leanness or corpulence based on their height and weight, intended to quantify tissue mass.",
+      form: {
+        fields: [
+          { label: "Enter Weight in Kgs", id: "bmi-weight", placeholder: "e.g., 70" },
+          { label: "Enter Height in m", id: "bmi-height", placeholder: "e.g., 1.75" },
+          { label: "Enter Age", id: "bmi-age", placeholder: "e.g., 25" }
+        ],
+        button: { id: "bmi-calculate-btn", text: "Calculate" }
+      },
+      formulaImage: { src: "/images/formula.jpg", alt: "Formula Image" }
+    },
+    right: {
+      images: [
+        { src: "/images/bmi-range.jpg", alt: "BMI range chart" },
+        { src: "/images/bmi-chart.jpg", alt: "BMI chart" }
+      ]
+    }
+  };
+
+  // BMI Content Generation
   const contentContainer = document.querySelector(".content-parent");
 
   // Left Content
@@ -131,3 +152,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
